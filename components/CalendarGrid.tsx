@@ -101,7 +101,7 @@ export default function CalendarGrid({ currentMonth, events, members, onDateClic
           return { event, startCol, colSpan, rowIndex, isStart, isEnd };
         });
 
-        const weekMinHeight = Math.max(120, 32 + rows.length * 28);
+        const weekMinHeight = Math.max(70, 32 + rows.length * 28);
 
         return (
           <div key={wIdx} className="grid grid-cols-7 flex-1 bg-white relative" style={{ minHeight: `${weekMinHeight}px` }}>

@@ -18,7 +18,7 @@ export default function FilterBar({
   const types = ['전체', '강의', '회의', '프로젝트'];
 
   return (
-    <div className="flex flex-col sm:flex-row gap-4 px-6 py-4 bg-gray-50 border-b border-gray-200">
+    <div className="flex flex-row gap-4 px-4 sm:px-6 py-3 sm:py-4 bg-gray-50 border-b border-gray-200 overflow-x-auto whitespace-nowrap scrollbar-hide">
       <div className="flex items-center gap-2">
         <label className="text-sm font-medium text-gray-700 w-12 shrink-0">분류</label>
         <select
