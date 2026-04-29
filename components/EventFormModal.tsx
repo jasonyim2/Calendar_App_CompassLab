@@ -99,7 +99,7 @@ export default function EventFormModal({ initialEvent, initialDate, members, onC
     if (!payload.end_date) {
       payload.end_date = payload.start_date;
     }
-    if (payload.start_date > payload.end_date) {
+    if (payload.start_date && payload.end_date && payload.start_date > payload.end_date) {
       alert("종료일은 시작일보다 빠를 수 없습니다.");
       return;
     }
