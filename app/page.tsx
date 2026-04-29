@@ -172,6 +172,16 @@ export default function Home() {
             setSelectedEvent(null);
           }}
           onDelete={() => handleDeleteEvent(selectedEvent.event_id)}
+          onCopy={() => {
+            setFormInitialEvent({
+              ...selectedEvent,
+              event_id: '',
+              start_date: '',
+              end_date: '',
+            });
+            setIsFormOpen(true);
+            setSelectedEvent(null);
+          }}
         />
       )}
 

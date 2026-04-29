@@ -7,9 +7,10 @@ interface EventModalProps {
   onClose: () => void;
   onEdit: () => void;
   onDelete: () => void;
+  onCopy: () => void;
 }
 
-export default function EventModal({ event, members, onClose, onEdit, onDelete }: EventModalProps) {
+export default function EventModal({ event, members, onClose, onEdit, onDelete, onCopy }: EventModalProps) {
   const [showConfirm, setShowConfirm] = useState(false);
 
   const memberIds = event.member_ids ? event.member_ids.split(',').map(id => id.trim()) : [];
@@ -127,6 +128,12 @@ export default function EventModal({ event, members, onClose, onEdit, onDelete }
         </div>
 
         <div className="bg-gray-50 px-6 py-4 flex justify-end gap-3 border-t border-gray-200">
+          <button 
+            onClick={onCopy}
+            className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 hover:bg-gray-100 rounded-md shadow-sm transition-colors"
+          >
+            이 일정 복사
+          </button>
           <button 
             onClick={handleDelete}
             className="px-4 py-2 text-sm font-medium text-white bg-[var(--accent)] hover:bg-red-800 rounded-md shadow-sm transition-colors"
