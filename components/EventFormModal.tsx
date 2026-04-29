@@ -67,6 +67,9 @@ export default function EventFormModal({ initialEvent, initialDate, members, onC
         const defaultSub = SUB_TYPE_OPTIONS[value]?.[0] || '시작';
         next.sub_type = defaultSub;
       }
+      if (field === 'start_date') {
+        next.end_date = value;
+      }
       return next;
     });
   };
